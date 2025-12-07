@@ -7,6 +7,8 @@ import Footer from './components/Footer';
 
 import About from './components/About';
 
+import { Analytics } from "@vercel/analytics/react"
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +20,7 @@ function App() {
         <Skills />
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 }
