@@ -8,11 +8,14 @@ const Hero = () => {
     const [typingSpeed, setTypingSpeed] = React.useState(150);
 
     const roles = [
-        "DevSecOps Engineer",
-        "Network Engineer",
+        "Cloud DevOps Engineer",
         "Data & ML Engineer",
-        "MLOps Engineer",
-        "Security Specialist"
+        "Cloud Engineer",
+        "Network Engineer",
+        "DevSecOps Engineer",
+        "IT Support Specialist",
+        "Security Specialist",
+        "MLOps Engineer"
     ];
 
     React.useEffect(() => {
@@ -61,7 +64,20 @@ const Hero = () => {
             }} />
 
             <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '800px' }}>
-                <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+                <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
+                    <span style={{
+                        padding: '0.5rem 1rem',
+                        backgroundColor: 'rgba(100, 108, 255, 0.1)',
+                        color: 'var(--accent-primary)',
+                        borderRadius: '20px',
+                        fontSize: '0.9rem',
+                        fontWeight: '600',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem'
+                    }}>
+                        Based in Ethiopia 🇪🇹
+                    </span>
                     <a href="https://www.cncf.io/training/kubestronaut/?_sft_lf-country=et" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                         <span style={{
                             padding: '0.5rem 1rem',

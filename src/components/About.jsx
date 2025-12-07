@@ -60,7 +60,7 @@ const About = () => {
                                 DevSecOps | Cloud | Data | ML & MLOps | Network Engineer | Trainer
                             </p>
                             <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-                                With over 16+ years of IT experience, my career began in IT support and progressed through roles as a Network Engineer and Network Specialist. I have worked as a Field Engineer for over 35 technology companies, successfully delivering a wide range of networking and infrastructure projects.
+                                With over 16+ years of IT experience, my career began in IT support and progressed through roles as a Network Engineer and Network Specialist. I am based in Ethiopia and have worked as a Field Engineer for over 35 technology companies, successfully delivering a wide range of networking and infrastructure projects locally and internationally.
                             </p>
                             <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
                                 In the last 6 years, I transitioned into DevOps and cloud technologies, excelling in designing, deploying, and automating robust infrastructure solutions across AWS, Azure, GCP, and on-premises Kubernetes environments.
@@ -123,6 +123,39 @@ const About = () => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </div>
+                {/* FAQ Section */}
+                <div style={{ width: '100%', maxWidth: '800px', marginTop: '2rem' }}>
+                    <h3 style={{ marginBottom: '2rem', textAlign: 'center' }}>Frequently Asked Questions</h3>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                        <div style={{
+                            backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                            padding: '1.5rem',
+                            borderRadius: '12px',
+                            border: '1px solid rgba(255, 255, 255, 0.05)'
+                        }}>
+                            <h4 style={{ color: 'var(--accent-primary)', marginBottom: '0.5rem' }}>Do you provide Cloud & DevOps support in Ethiopia?</h4>
+                            <p style={{ color: 'var(--text-secondary)' }}>Yes, I am based in Ethiopia and provide on-site and remote Cloud, DevOps, and Infrastructure support for local businesses and international companies operating in Ethiopia.</p>
+                        </div>
+                        <div style={{
+                            backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                            padding: '1.5rem',
+                            borderRadius: '12px',
+                            border: '1px solid rgba(255, 255, 255, 0.05)'
+                        }}>
+                            <h4 style={{ color: 'var(--accent-primary)', marginBottom: '0.5rem' }}>Are you available for freelance projects?</h4>
+                            <p style={{ color: 'var(--text-secondary)' }}>Yes, I am available for freelance consulting, short-term contracts, and specialized project-based work for Data Engineering, Cloud Migration, and Network Security.</p>
+                        </div>
+                        <div style={{
+                            backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                            padding: '1.5rem',
+                            borderRadius: '12px',
+                            border: '1px solid rgba(255, 255, 255, 0.05)'
+                        }}>
+                            <h4 style={{ color: 'var(--accent-primary)', marginBottom: '0.5rem' }}>What specific services do you offer?</h4>
+                            <p style={{ color: 'var(--text-secondary)' }}>I offer a wide range of services including Cloud Migration (AWS, Azure, GCP), Kubernetes Management, CI/CD Pipeline Setup, Network Infrastructure Design, and Data Engineering solutions.</p>
+                        </div>
                     </div>
                 </div>
             </div>
