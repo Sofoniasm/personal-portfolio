@@ -43,7 +43,7 @@ const Hero = () => {
     }, [text, isDeleting, loopNum, typingSpeed]);
 
     return (
-        <section id="about" style={{
+        <section id="home" style={{
             minHeight: '100vh',
             display: 'flex',
             alignItems: 'center',

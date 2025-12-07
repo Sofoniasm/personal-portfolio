@@ -24,7 +24,7 @@ const About = () => {
     ];
 
     return (
-        <section id="about-details" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+        <section id="about" style={{ backgroundColor: 'var(--bg-secondary)' }}>
             <div className="container">
                 <h2 style={{ marginBottom: '3rem' }}>About <span className="text-gradient">Me</span></h2>
 
