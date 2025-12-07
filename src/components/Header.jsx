@@ -8,81 +8,81 @@ const Header = () => {
   const [activeHash, setActiveHash] = useState(window.location.hash || '#home');
 
   const toggleMenu = () => setIsOpen(!isOpen);
+}, [activeHash]);
 
-  React.useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'projects', 'skills', 'contact'];
-      let currentSection = '';
+const navLinks = [
+  { name: 'About', href: '#about' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Contact', href: '#contact' },
+];
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          // Logic: If the top of the section is within the viewport (or close to it)
-          // specifically if it's taking up the top part of the screen.
-          // We check if the section top is somewhat near the top of the viewport
-          // or if we have scrolled past it but not past its bottom.
-          if (rect.top <= 150 && rect.bottom >= 150) {
-            currentSection = '#' + section;
-            break; // Found the top-most active section
-          }
-        }
-      }
-
-      if (currentSection && currentSection !== activeHash) {
-        setActiveHash(currentSection);
-        // Update URL without jumping
-        if (currentSection === '#home') {
-          window.history.replaceState(null, null, window.location.pathname);
-        } else {
-          window.history.replaceState(null, null, currentSection);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeHash]);
-
-  const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' },
-  ];
-
-  return (
-    <header style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      backgroundColor: 'rgba(10, 10, 10, 0.9)',
-      backdropFilter: 'blur(10px)',
-      zIndex: 1000,
-      borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+return (
+  <header style={{
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: 'rgba(10, 10, 10, 0.9)',
+    backdropFilter: 'blur(10px)',
+    zIndex: 1000,
+    borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+  }}>
+    <div className="container" style={{
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      height: '80px'
     }}>
-      <div className="container" style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        height: '80px'
-      }}>
-        <a href="#home" style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
-          Sofonias<span className="text-gradient">DevSecOps</span>
-        </a>
+      <a href="#home" style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
+        Sofonias<span className="text-gradient">DevSecOps</span>
+      </a>
 
-        {/* Desktop Nav */}
-        <nav className="desktop-nav" style={{ display: 'none' }}>
-          <ul style={{ display: 'flex', gap: '2rem' }}>
+      {/* Desktop Nav */}
+      <nav className="desktop-nav" style={{ display: 'none' }}>
+        <ul style={{ display: 'flex', gap: '2rem' }}>
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <a
+                href={link.href}
+                style={{
+                  fontWeight: '500',
+                  color: activeHash === link.href ? 'var(--accent-primary)' : 'inherit',
+                  transition: 'color 0.3s ease'
+                }}
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* Mobile Menu Button */}
+      <button className="mobile-menu-btn" onClick={toggleMenu} style={{ color: 'white' }}>
+        {isOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      {/* Mobile Nav Overlay */}
+      {isOpen && (
+        <div style={{
+          position: 'absolute',
+          top: '80px',
+          left: 0,
+          right: 0,
+          backgroundColor: 'var(--bg-secondary)',
+          padding: '2rem',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+        }}>
+          <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'center' }}>
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a
                   href={link.href}
+                  onClick={toggleMenu}
                   style={{
-                    fontWeight: '500',
-                    color: activeHash === link.href ? 'var(--accent-primary)' : 'inherit',
-                    transition: 'color 0.3s ease'
+                    fontSize: '1.2rem',
+                    color: activeHash === link.href ? 'var(--accent-primary)' : 'inherit'
                   }}
                 >
                   {link.name}
@@ -90,52 +90,18 @@ const Header = () => {
               </li>
             ))}
           </ul>
-        </nav>
+        </div>
+      )}
+    </div>
 
-        {/* Mobile Menu Button */}
-        <button className="mobile-menu-btn" onClick={toggleMenu} style={{ color: 'white' }}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-
-        {/* Mobile Nav Overlay */}
-        {isOpen && (
-          <div style={{
-            position: 'absolute',
-            top: '80px',
-            left: 0,
-            right: 0,
-            backgroundColor: 'var(--bg-secondary)',
-            padding: '2rem',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
-          }}>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'center' }}>
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    onClick={toggleMenu}
-                    style={{
-                      fontSize: '1.2rem',
-                      color: activeHash === link.href ? 'var(--accent-primary)' : 'inherit'
-                    }}
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-
-      <style>{`
+    <style>{`
         @media (min-width: 768px) {
           .desktop-nav { display: block !important; }
           .mobile-menu-btn { display: none !important; }
         }
       `}</style>
-    </header>
-  );
+  </header>
+);
 };
 
 export default Header;
