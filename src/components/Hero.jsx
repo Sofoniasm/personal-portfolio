@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Cloud, Terminal, Shield, Database } from 'lucide-react';
+import { ArrowRight, Cloud, Terminal, Shield, Database, Download } from 'lucide-react';
 
 const Hero = () => {
     const [text, setText] = React.useState('');
@@ -117,11 +117,28 @@ const Hero = () => {
                     <a href="#projects" className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                         View Projects <ArrowRight size={20} />
                     </a>
+                    <a href="/Sofonias_Mengistu_Resume.pdf" download="Sofonias_Mengistu_Resume.pdf" style={{
+                        padding: '0.8rem 1.5rem',
+                        border: '1px solid rgba(255,255,255,0.2)',
+                        borderRadius: '8px',
+                        fontWeight: '600',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        backgroundColor: 'rgba(255,255,255,0.05)',
+                        textDecoration: 'none',
+                        color: 'white'
+                    }}>
+                        Download CV <Download size={20} />
+                    </a>
                     <a href="#contact" style={{
                         padding: '0.8rem 1.5rem',
                         border: '1px solid rgba(255,255,255,0.2)',
                         borderRadius: '8px',
-                        fontWeight: '600'
+                        fontWeight: '600',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
                     }}>
                         Contact Me
                     </a>
