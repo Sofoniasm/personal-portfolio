@@ -8,14 +8,14 @@ const Hero = () => {
     const [typingSpeed, setTypingSpeed] = React.useState(150);
 
     const roles = [
-        "Cloud DevOps Engineer",
+        "DevOps Engineer in Ethiopia",
+        "Cloud DevOps Engineer in Ethiopia",
+        "Data Engineer in Ethiopia",
         "Africa Cloud Engineer",
-        "Data & ML Engineer",
         "Cloud Engineer",
         "Network Engineer",
         "DevSecOps Engineer",
         "IT Support Specialist",
-        "Security Specialist",
         "MLOps Engineer"
     ];
 
@@ -111,7 +111,7 @@ const Hero = () => {
                 </h1>
 
                 <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', maxWidth: '600px' }}>
-                    Specializing in AWS, Azure, GCP, Infomaniak, Akamai, OpenStack, and Kubernetes. The premier <strong>DevOps Engineer in Ethiopia</strong>, delivering secure, scalable, and automated infrastructure solutions for <strong>Africa</strong> and the world.
+                    Specializing in AWS, Azure, GCP, Infomaniak, Akamai, OpenStack, and Kubernetes. The leading <strong>DevOps Engineer in Ethiopia</strong>, <strong>Cloud DevOps Engineer in Ethiopia</strong>, and <strong>Data Engineer in Ethiopia</strong>, delivering secure, scalable, and automated infrastructure solutions for <strong>Africa</strong> and the world.
                 </p>
 
                 <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>

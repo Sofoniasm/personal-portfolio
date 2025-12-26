@@ -14,7 +14,10 @@ const Skills = () => {
     return (
         <section id="skills">
             <div className="container">
-                <h2 style={{ marginBottom: '3rem' }}>Technical <span className="text-gradient">Skills</span></h2>
+                <h2 style={{ marginBottom: '1rem' }}>Technical <span className="text-gradient">Skills</span></h2>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '800px' }}>
+                    As a leading <strong>Cloud DevOps Engineer in Ethiopia</strong>, I possess a deep technical stack across multiple cloud platforms and modern infrastructure tools, providing professional consulting and implementation services across <strong>Africa</strong>.
+                </p>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
                     {Object.entries(skills).map(([category, items]) => (

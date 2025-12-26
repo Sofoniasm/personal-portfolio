@@ -35,7 +35,10 @@ const Footer = () => {
                     <p>✉️ sofoniasmengistu@gmail.com</p>
                 </div>
 
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginTop: '2rem' }}>
+                    Providing professional <strong>Cloud Engineering</strong> & <strong>DevOps Consulting</strong> in <strong>Addis Ababa, Ethiopia</strong> and virtually across <strong>Africa</strong>.
+                </p>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginTop: '1rem' }}>
                     © {new Date().getFullYear()} Sofonias Mengistu. All rights reserved.
                 </p>
             </div>
